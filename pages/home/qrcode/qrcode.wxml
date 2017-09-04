@@ -1,0 +1,2 @@
+<!--pages/home/qrcode/qrcode.wxml-->
+<image src='{{url}}' class="qrcode"></image>

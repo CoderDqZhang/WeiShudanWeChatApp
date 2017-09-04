@@ -1,0 +1,39 @@
+<!--pages/home/my_books/my_books.wxml-->
+<template name="book_dandan_model">
+  <view wx:if="{{imageType == 'dandan'}}">
+  <view class="book_info_image_dandan_info" style='flex-direction: row;  align-items: center;  justify-content: flex-start;  display: flex;  height: 228rpx;  background-color: white;  padding-left: 0rpx;  padding-right: 40rpx;  padding-top: 20rpx;  padding-bottom: 20rpx;'>
+       <image src="{{bookImg}}" class="book_dandan_image" style='width: 208rpx;height: 208rpx;flex-shrink: 0;flex-grow: 0;background-color: white;'></image> 
+      <view class="book_dandan_desc_info" style='height: 188rpx;  margin-left: 0rpx;  flex-shrink: 1;  flex-grow: 1;  background-color: white;  flex-direction: column;  justify-content: space-between;  display: flex;'>
+        <view class="book_title" style='font-size: 30rpx;  margin-top: 2rpx;  color: #384249;  text-overflow: -o-ellipsis-lastline;  overflow: hidden;  text-overflow: ellipsis;  display: -webkit-box;  -webkit-line-clamp: 2;  -webkit-box-orient: vertical;'>{{title}}</view>
+        <view class="base_info" style='flex-direction: row;  display: flex;  justify-content: space-between;  align-items: center;'>
+          <view>
+            <view class="book_subtitle" style='margin-top: 2rpx;  line-height: 30rpx;  font-size: 26rpx;  color: #8a96a2;'>{{oress}}</view>
+            <view class="book_subtitle" style='margin-top: 2rpx;  line-height: 30rpx;  font-size: 26rpx;  color: #8a96a2;'>{{author}}</view>
+            <view class="book_subtitle" style='margin-top: 2rpx;  line-height: 30rpx;  font-size: 26rpx;  color: #8a96a2;'>出版时间：{{publishDate}}</view>
+          </view>
+          <view class="status" style='background-color: rebeccapurple;  width: 100rpx;  height: 40rpx;  padding-top: 10rpx;  font-size: 28rpx;  text-align: center;  color: white;'>{{borrowDesc}}</view>
+        </view>
+      </view>
+  </view>
+  </view>
+  <view wx:else>
+  <view class="book_info_image_douban_info" style='flex-direction: row;  align-items: center;  display: flex;  height: 228rpx;  background-color: white;  padding-left: 40rpx;  padding-right: 40rpx;  padding-top: 20rpx;  padding-bottom: 20rpx;'>
+      <image src="{{bookImg}}" class="book_douban_image" style='width: 128rpx;  height: 208rpx;  flex-shrink: 0;  flex-grow: 0;  background-color: white;'></image>
+      <view class="book_douban_desc_info" style='height: 188rpx;  margin-left: 40rpx;  flex-shrink: 1;  flex-grow: 1;  background-color: white;  flex-direction: column;  justify-content: space-between;  display: flex;'>
+        <view class="book_title" style='font-size: 30rpx;  margin-top: 2rpx;  color: #384249;  text-overflow: -o-ellipsis-lastline;  overflow: hidden;  text-overflow: ellipsis;  display: -webkit-box;  -webkit-line-clamp: 2;  -webkit-box-orient: vertical;'>{{title}}</view>
+        <view class="base_info" style='flex-direction: row;  display: flex;  justify-content: space-between; align-items: center;'>
+          <view>
+            <view class="book_subtitle" style='margin-top: 2rpx;  line-height: 30rpx;  font-size: 26rpx;  color: #8a96a2;'>{{oress}}</view>
+            <view class="book_subtitle" style='margin-top: 2rpx;  line-height: 30rpx;  font-size: 26rpx;  color: #8a96a2;'>{{author}}</view>
+            <view class="book_subtitle" style='margin-top: 2rpx;  line-height: 30rpx;  font-size: 26rpx;  color: #8a96a2;'>出版时间：{{publishDate}}</view>
+          </view>
+          <view class="status" style='background-color: rebeccapurple;  width: 100rpx;  height: 40rpx;  padding-top: 10rpx;  font-size: 28rpx;  text-align: center;  color: white;'>{{borrowDesc}}</view>
+        </view>
+      </view>
+  </view>
+  </view>
+</template>
+
+<view class="book_list_class" wx:for="{{book_list.books}}" wx:key="book" data-index="{{index}}" bindtap="book_list_tap">
+  <template is="book_dandan_model" data="{{...item.tails.bookInfo}}" />
+</view>

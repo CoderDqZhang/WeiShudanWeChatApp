@@ -1,0 +1,48 @@
+/* pages/home/my_borrow/my_borrow.wxss */
+.session_user{
+  background-color: white;
+}
+
+.user_info{
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 88rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+.user{
+  height: 88rpx;
+  flex-direction: row;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.user_name{
+  color: #384249;
+  font-size: 30rpx;
+}
+
+.status_info{
+  margin-left: 10rpx;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  display: flex;
+}
+
+.time{
+  color: red;
+  font-size: 26rpx;
+}
+
+.borrow_status{
+  padding-top: 10rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  padding-bottom: 10rpx;
+  font-size: 30rpx;
+}

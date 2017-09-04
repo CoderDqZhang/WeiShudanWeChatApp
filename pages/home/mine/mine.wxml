@@ -1,0 +1,20 @@
+<!--pages/home/mine/mine.wxml-->
+<view class="cell_session">
+  <view class="cell_class" bindtap="my_books">
+    <view class="title">我的书库
+    </view>
+    <image mode="scaleToFill" src="/images/gloable/detail.png" class="image_class"></image>
+  </view>
+  <view style="width: 100%; height: 1rpx; background-color: #f6f7f6;"></view>
+  <view class="cell_class" bindtap="my_borrow">
+    <view class="title">我的借阅
+    </view>
+    <image mode="scaleToFill" src="/images/gloable/detail.png" class="image_class"></image>
+  </view>
+  <view style="width: 100%; height: 1rpx; background-color: #f6f7f6;"></view>
+  <view class="cell_class" bindtap="my_gives">
+    <view class="title">我的赠送
+    </view>
+    <image mode="scaleToFill" src="/images/gloable/detail.png" class="image_class"></image>
+  </view>
+</view>

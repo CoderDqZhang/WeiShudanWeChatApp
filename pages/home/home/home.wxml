@@ -1,0 +1,1 @@
+<button class="add_to_my_book" bindtap="scan_tap">扫一扫</button>
