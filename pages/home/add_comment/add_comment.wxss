@@ -1,0 +1,9 @@
+/* pages/home/add_comment/add_comment.wxss */
+
+.inputClass{
+  background-color: #ffffff;
+  font-size: 30rpx;
+  min-height: 100rpx;
+  margin-top: 30rpx;
+  padding-left: 30rpx;
+}

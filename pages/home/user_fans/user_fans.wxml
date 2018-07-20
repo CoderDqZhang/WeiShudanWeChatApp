@@ -1,0 +1,25 @@
+<!--pages/home/user_fans/user_fans.wxml-->
+<template name="userInfo">
+  <view class='user_info_setion'>
+    <view class='user_info'>
+      <view class='avater'>
+        <image src="{{tails.userInfo.photo}}" style='width: 100rpx;  height: 100rpx;  flex-shrink: 0;  flex-grow: 0;  background-color: white; margin-left:30rpx;margin-top:10rpx;'></image>
+      </view>
+      <view class='user_infos'>
+        <view class='user_name'>{{username}}</view>
+        <view class='user_relation'>
+          <view class='user_fansNum'>粉丝：{{tails.userInfo.fansNum}}</view>
+          <view class='user_fansNum'>关注：{{tails.userInfo.attentionNum}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+<view class="user_list_class" wx:for="{{fans_list}}" wx:key="user" data-index="{{index}}">
+  <view class='user_info_setion'>
+    <view bindtap="user_info_tap" data-index="{{index}}">
+      <template is="userInfo" data="{{...item}}" />
+    </view>
+    <view class='attention' data-index="{{index}}" bindtap='attention_tap'>关注</view>
+  </view>
+</view>

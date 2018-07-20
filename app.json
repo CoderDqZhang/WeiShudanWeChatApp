@@ -2,13 +2,21 @@
   "pages":[
     "pages/home/home/home",
     "pages/home/book_desc/book_desc",
+    "pages/home/comment/comment",
+    "pages/home/add_comment/add_comment",
     "pages/home/tabbar/tabbar",
     "pages/home/mine/mine",
+    "pages/home/boooks_douban/books",        
     "pages/home/qrcode/qrcode",        
     "pages/home/my_books/my_books",
+    "pages/home/book_user/book_user",
+    "pages/home/otherbooks/otherbooks",
     "pages/home/my_borrow/my_borrow",
     "pages/home/my_gives/my_gives",
-    
+    "pages/home/bind_user/bind_user",
+    "pages/home/user_attention/user_attention",
+    "pages/home/user_fans/user_fans",
+    "pages/home/user_info/change_userinfo",
     "pages/logs/logs"
   ],
   "window":{
@@ -36,7 +44,7 @@
     }]
   },
   "networkTimeout": {
-    "request": 10000,
+    "request": 100000,
     "downloadFile": 10000
   },
   "debug": true

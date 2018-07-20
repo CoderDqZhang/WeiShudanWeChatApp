@@ -1,0 +1,20 @@
+<!--pages/home/comment/comment.wxml-->
+
+<scroll-view scroll-y='true' style="backgroudcolor:#384249; height:{{windowHeight * 2 - 80}}rpx;">
+  <view wx:for="{{data_list}}" data-index="{{index}}" wx:key="data" bindtap='select_comment'>
+    <view class="comment_array">
+      <view>{{data_list[index]}}</view>
+      <view class="edite_btn" wx:if="{{isEdite}}" data-index="{{index}}" bindtap='delete_btn'>删除</view>
+      <view wx:else>
+        <image wx:if="{{check[index] == 1}}" class='images_class' src='/images/gloable/check.png' mode='scaleToFill'></image>
+      </view>
+    </view>
+    <view style="margin-left: 15px;margin-right: 0px;height:1rpx; background-color: #E9EBF2;"></view>
+  </view>
+  <view class='edite'>
+    <button bindtap="add_my_comment">添加</button>
+    <button bindtap="edite_comment" wx:if="{{isEdite}}">完成 </button>
+    <button bindtap="edite_comment" wx:else>编辑</button>
+  </view>
+</scroll-view>
+<button bindtap="add_my_book">加入书库</button>

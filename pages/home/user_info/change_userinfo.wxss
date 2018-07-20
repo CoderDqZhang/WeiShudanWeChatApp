@@ -1,0 +1,151 @@
+/* pages/home/user_info/change_userinfo.wxss */
+page {
+  background-color: #efeff4;
+}
+.title_input {
+  flex-direction: row;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+  height: 44px;
+  width: 100%;
+}
+
+.title {
+  margin-right: 15px;
+  float: left;
+  margin-left: 15px;
+  font-size: 15px;
+  color: #384249;
+  letter-spacing: 0;
+}
+
+.title_phone{
+  margin-right: 29px;
+  float: left;
+  margin-left: 15px;
+  font-size: 15px;
+  color: #384249;
+  letter-spacing: 0;
+}
+
+.detail_input {
+  background-color: white;
+  display: inline-block;
+  height: 75px;
+  width: 100%;
+}
+
+.detail_title {
+  margin-top: 13px;
+  margin-left: 15px;
+  margin-right: 5px;
+  float: left;
+  font-size: 15px;
+  color: #384249;
+}
+
+.picke_input {
+  background-color: white;
+  flex-direction: row;
+  display: flex;
+  height: 44px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.detail_text {
+  position: absolute;
+  color: #8a96a2;
+  margin-top: 3px;
+  margin-left: 108px;
+  width: 50%;
+  height: 42px;
+}
+
+.picket {
+  font-size: 15px;
+  color: #384249;
+  width: 100%;
+  letter-spacing: 0;
+}
+
+.picketunSelect{
+  font-size: 15px;
+  color: #BBC1CB;
+  width: 100%;
+  letter-spacing: 0;
+}
+
+.picket_select {
+  width: 100%;
+  color: #8a96a2;
+}
+
+.input_text {
+  margin-left: 4px;
+  /*background-color: #4bd4c5;*/
+  margin-right: 30px;
+  color: #8a96a2;
+}
+
+.region_text {
+  margin-top: 15px;
+  font-size: 15px;
+  float: left;
+  color: #bbc1cb;
+  letter-spacing: 0;
+}
+
+.detailImage {
+  margin-right: 15px;
+  width: 8px;
+  height: 13px;
+}
+
+.confirm {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-top: 60rpx;
+  background-color: #4bd4c5;
+  font-size: 36rpx;
+  color: #fff;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.bottom {
+  background-color: #efeff4;
+  position: absolute;
+  height: 100%;
+  margin-top: 0px;
+  width: 100%;
+}
+
+.noneTicketSession {
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.none_covers {
+  width: 136rpx;
+  height: 190rpx;
+}
+
+.none_text {
+  margin-top: 75rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #BBC1CB;
+}
+
+.confim{
+  margin-top: 40rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}

@@ -1,1 +1,53 @@
 /* pages/home/home/home.wxss */
+.top_class{
+  background-color: #FFFFFF;
+  height: 98rpx;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cancelClass{
+  margin-right: 30rpx;
+  font-size: 30rpx;
+}
+
+.image_class{
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+}
+
+.inputText{
+  height: 80rpx;
+  width: 85%;
+  background-color: #efeff4;
+  margin-left: 10rpx;
+  padding-left: 30rpx;
+  border-radius: 10rpx;
+  color: #384249;
+  border: 1rpx solid #e6e6ea;
+  font-size: 26rpx;
+  margin-right: 16rpx;
+}
+
+.loading{
+  padding: 10rpx;
+  text-align: center;
+}
+
+.loading:before{
+  display: inline-block;
+  margin-right: 5rpx;
+  vertical-align: middle;
+  content: '';
+  width: 40rpx;
+  height: 40rpx;
+  background: url(../../images/icon-loading.png) no-repeat;
+  background-size: contain;
+  animation: rotate 1s linear infinite;
+}
+.loading.complete:before{
+  display: none;
+}

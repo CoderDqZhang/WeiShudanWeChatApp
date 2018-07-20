@@ -1,0 +1,73 @@
+<template name="book_dandan_model">
+  <view wx:if="{{imageType == 'dandan'}}">
+    <view class="book_info_image_dandan_info" style='flex-direction: row;  align-items: center;  justify-content: flex-start;  display: flex;  height: 228rpx;  background-color: white;  padding-left: 0rpx;  padding-right: 40rpx;  padding-top: 20rpx;  padding-bottom: 20rpx;'>
+      <image src="{{bookImg}}" class="book_dandan_image" style='width: 208rpx;height: 208rpx;flex-shrink: 0;flex-grow: 0;background-color: white;'></image>
+      <view class="book_dandan_desc_info" style='height: 188rpx;  margin-left: 0rpx;  flex-shrink: 1;  flex-grow: 1;  background-color: white;  flex-direction: column;  justify-content: space-between;  display: flex;'>
+        <view class="book_title" style='font-size: 30rpx;  margin-top: 2rpx;  color: #384249;  text-overflow: -o-ellipsis-lastline;  overflow: hidden;  text-overflow: ellipsis;  display: -webkit-box;  -webkit-line-clamp: 2;  -webkit-box-orient: vertical;'>{{title}}</view>
+        <view class="base_info" style='flex-direction: row;  display: flex;  justify-content: space-between;  align-items: center;'>
+          <view>
+            <view class="book_subtitle" style='margin-top: 2rpx;  line-height: 30rpx;  font-size: 26rpx;  color: #8a96a2;'>{{oress}}</view>
+            <view class="book_subtitle" style='margin-top: 2rpx;  line-height: 30rpx;  font-size: 26rpx;  color: #8a96a2;'>{{author}}</view>
+            <view class="book_subtitle" style='margin-top: 2rpx;  line-height: 30rpx;  font-size: 26rpx;  color: #8a96a2;'>出版时间：{{publishDate}}</view>
+          </view>
+          <!-- <view class="status" style='background-color: rebeccapurple;  width: 100rpx;  height: 40rpx;  padding-top: 10rpx;  font-size: 28rpx;  text-align: center;  color: white;'>{{borrowDesc}}</view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:else>
+    <view class="book_info_image_douban_info" style='flex-direction: row;  align-items: center;  display: flex;  height: 228rpx;  background-color: white;  padding-left: 40rpx;  padding-right: 40rpx;  padding-top: 20rpx;  padding-bottom: 20rpx;'>
+      <image src="{{bookImg}}" class="book_douban_image" style='width: 128rpx;  height: 208rpx;  flex-shrink: 0;  flex-grow: 0;  background-color: white;'></image>
+      <view class="book_douban_desc_info" style='height: 188rpx;  margin-left: 40rpx;  flex-shrink: 1;  flex-grow: 1;  background-color: white;  flex-direction: column;  justify-content: space-between;  display: flex;'>
+        <view class="book_title" style='font-size: 30rpx;  margin-top: 2rpx;  color: #384249;  text-overflow: -o-ellipsis-lastline;  overflow: hidden;  text-overflow: ellipsis;  display: -webkit-box;  -webkit-line-clamp: 2;  -webkit-box-orient: vertical;'>{{title}}</view>
+        <view class="base_info" style='flex-direction: row;  display: flex;  justify-content: space-between; align-items: center;'>
+          <view>
+            <view class="book_subtitle" style='margin-top: 2rpx;  line-height: 30rpx;  font-size: 26rpx;  color: #8a96a2;'>{{oress}}</view>
+            <view class="book_subtitle" style='margin-top: 2rpx;  line-height: 30rpx;  font-size: 26rpx;  color: #8a96a2;'>{{author}}</view>
+            <view class="book_subtitle" style='margin-top: 2rpx;  line-height: 30rpx;  font-size: 26rpx;  color: #8a96a2;'>出版时间：{{publishDate}}</view>
+          </view>
+          <!-- <view class="status" style='background-color: rebeccapurple;  width: 100rpx;  height: 40rpx;  padding-top: 10rpx;  font-size: 28rpx;  text-align: center;  color: white;'>{{borrowDesc}}</view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+<template name="userInfo">
+  <view class='user_info_setion'>
+    <view class='user_info'>
+      <view class='avater'>
+        <image src="{{tails.userInfo.photo}}" style='width: 100rpx;  height: 100rpx;  flex-shrink: 0;  flex-grow: 0;  background-color: white; margin-top:10rpx;'></image>
+      </view>
+      <view class='user_infos'>
+        <view class='user_name'>{{username}}</view>
+        <view class='user_relation'>
+          <view class='user_fansNum'>粉丝：{{tails.userInfo.fansNum}}</view>
+          <view class='user_fansNum'>关注：{{tails.userInfo.attentionNum}}</view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</template>
+<scroll-view scroll-y='true' style="backgroudcolor:#384249; height:{{windowHeight * 2}}rpx;">
+  <template is="book_dandan_model" data="{{...book_info.book}}" />
+  <view style='background-color:#ffffff'>
+    <view class='book_desc' wx:if="{{book_info.book.contentDesc != ''}}">
+      <view class='desc_title'>图书简介</view>
+      <view class='desc_txt'>{{book_info.book.contentDesc}}</view>
+      <view style='margin-top: 20rpx;height:20rpx;'></view>
+    </view>
+  </view>
+  <view style='margin-top: 20rpx'></view>
+  <view wx:if="{{book_info.users.length > 0}}" style='background-color:#ffffff' class='book_desc'>
+    <view class="desc_title">找他们取取经</view>
+    <view class="user_list_class" wx:for="{{book_info.users}}" wx:key="user">
+      <view class='user_info_setion'>
+        <view bindtap="user_info_tap" data-index="{{index}}">
+          <template is="userInfo" data="{{...item}}" />
+        </view>
+        <view class='attention' bindtap='attention_tap' data-index="{{index}}">找他聊聊</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

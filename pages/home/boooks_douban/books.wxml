@@ -1,0 +1,2 @@
+<!--pages/home/boooks_douban/books.wxml-->
+<web-view src="https://book.douban.com/subject/1245245/"></web-view>

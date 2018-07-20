@@ -1,20 +1,66 @@
 <!--pages/home/mine/mine.wxml-->
-<view class="cell_session">
-  <view class="cell_class" bindtap="my_books">
-    <view class="title">我的书库
-    </view>
-    <image mode="scaleToFill" src="/images/gloable/detail.png" class="image_class"></image>
+<!--pages/mine/mine/mine.wxml-->
+<view class="noneTicketSession" wx:if="{{isHaveOrder}}" style="height:{{                  windowsHeigth}}px;">
+  <view class="none_cover">
+    <image src="/images/gloable/Icon_Default.png" mode="aspectFill" class="cover"></image>
   </view>
-  <view style="width: 100%; height: 1rpx; background-color: #f6f7f6;"></view>
-  <view class="cell_class" bindtap="my_borrow">
-    <view class="title">我的借阅
+  <view class="none_text">
+    <view>{{showText}}</view>
+    <view style="margin-top:0rpx;">{{showText1}}
     </view>
-    <image mode="scaleToFill" src="/images/gloable/detail.png" class="image_class"></image>
   </view>
-  <view style="width: 100%; height: 1rpx; background-color: #f6f7f6;"></view>
-  <view class="cell_class" bindtap="my_gives">
-    <view class="title">我的赠送
+</view>
+<view class="ticketListSession" wx:else>
+  <view class="userInfo" id='user_info' bindtap='change_user_info'>
+    <view wx:if="{{userInfo != null}}">
+      <image src="{{userInfo.tails.userInfo.photo}}" mode="aspectFill" class="cover"></image>
     </view>
-    <image mode="scaleToFill" src="/images/gloable/detail.png" class="image_class"></image>
+    <view wx:else>
+      <image src="{{userInfo.tails.userInfo.photo}}" mode="aspectFill" class="cover"></image>
+    </view>
+    <view class="userName" wx:if="{{userInfo != null}}">{{userInfo.username}}</view>
+    <view class='userName' wx:else>请设置用户名</view>
+  </view>
+  <view class="table">
+    <view class="mineClass" id="myoWallet" bindtap="my_books">
+      <view class="tableTitle">我的书库</view>
+      <view class='book_number'>
+        <view class='table_title'>{{book_list}}</view>
+        <image class="detailImage" src="/images/gloable/detail.png" mode="aspectFill"></image>
+      </view>
+    </view>
+    <view style="margin-left: 15px;margin-right: 0px;height:1rpx; background-color: #E9EBF2;"></view>
+    <view class="mineClass" id="mysell" bindtap="my_borrow">
+      <view class="tableTitle">我的借阅</view>
+      <view class='book_number'>
+        <view class='table_title'>{{borrow_list}}</view>
+        <image class="detailImage" src="/images/gloable/detail.png" mode="aspectFill"></image>
+      </view>
+    </view>
+    <view style="margin-left: 15px;margin-right: 0px;height:1rpx; background-color: #E9EBF2;"></view>
+    <view class="mineClass" id="myorder" bindtap="my_gives">
+      <view class="tableTitle">我的赠送</view>
+      <view class='book_number'>
+        <view class='table_title'>{{give_list}}</view>
+        <image class="detailImage" src="/images/gloable/detail.png" mode="aspectFill"></image>
+      </view>
+    </view>
+    <view style="margin-left: 15px;margin-right: 0px;height:1rpx; background-color: #E9EBF2;"></view>
+    <view class="mineClass" id="myorder" bindtap="my_attention">
+      <view class="tableTitle">我的关注</view>
+      <view class='book_number'>
+        <view class='table_title'>{{attention_list}}</view>
+        <image class="detailImage" src="/images/gloable/detail.png" mode="aspectFill"></image>
+      </view>
+    </view>
+    <view style="margin-left: 15px;margin-right: 0px;height:1rpx; background-color: #E9EBF2;"></view>
+    <view class="mineClass" id="myorder" bindtap="my_fans">
+      <view class="tableTitle">关注我的</view>
+      <view class='book_number'>
+        <view class='table_title'>{{fans_list}}</view>
+        <image class="detailImage" src="/images/gloable/detail.png" mode="aspectFill"></image>
+      </view>
+    </view>
+    <view style="margin-left: 15px;margin-right: 0px;height:1rpx; background-color: #E9EBF2;"></view>
   </view>
 </view>

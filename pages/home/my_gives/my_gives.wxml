@@ -46,13 +46,17 @@
   </view>
 </template>
 
-<view class="session_user" wx:for="{{give_list_user}}" wx:key="user_book" data-index="{{index}}" bindtap="borrow_list_tap">
+<view class="session_user" wx:for="{{give_list_user}}" wx:key="user_book" data-index="{{index}}" bindtap="give_list_tap">
+<view style='height:20rpx;width:100%;background-color:#f6f6f6;'></view>
     <template is="user_model" data="{{...item}}" />
+    <view style="margin-left: 15px;margin-right: 0px;height:1rpx; background-color: #E9EBF2;"></view>
     <template is="book_dandan_model" data="{{...item.tails.bookInfo}}" />
     <view style='width:100%; height:20rpx;background-color: efeff4;'></view>
 </view>
-<view class="session_user" wx:for="{{give_list_other}}" wx:key="user_book" data-index="{{index}}" bindtap="borrow_list_tap">
+<view class="session_user" wx:for="{{give_list_other}}" wx:key="user_book" data-index="{{index}}" bindtap="give_list_tap_ohter">
+<view style='height:20rpx;width:100%;background-color:#f6f6f6;'></view>
     <template is="user_model" data="{{...item}}" />
+    <view style="margin-left: 15px;margin-right: 0px;height:1rpx; background-color: #E9EBF2;"></view>
     <template is="book_dandan_model" data="{{...item.tails.bookInfo}}" />
     <view style='width:100%; height:20rpx;background-color: efeff4;'></view>
 </view>

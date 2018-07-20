@@ -49,6 +49,21 @@ Page({
       })
     })
   },
+
+  give_list_tap:function (res){
+    var that = this
+    var data = JSON.stringify(that.data.give_list_user[res.currentTarget.dataset.index].tails.bookInfo)
+    wx.navigateTo({
+      url: '../book_desc/book_desc?topbook=' + data,
+    })
+  },
+  give_list_tap_ohter: function (res) {
+    var that = this
+    var data = JSON.stringify(that.data.give_list_other[res.currentTarget.dataset.index].tails.bookInfo)
+    wx.navigateTo({
+      url: '../book_desc/book_desc?topbook=' + data,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -46,3 +46,10 @@
   padding-bottom: 10rpx;
   font-size: 30rpx;
 }
+
+.qrcode{
+  text-align: center;
+  font-size: 30rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}

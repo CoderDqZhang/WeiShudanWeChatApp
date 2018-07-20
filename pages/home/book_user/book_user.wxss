@@ -1,0 +1,74 @@
+/* pages/home/book_user/book_user.wxss */
+.book_desc{
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  padding-bottom: 20rpx;
+  background-color: #ffffff;
+}
+
+.desc_title{
+  font-size: 30rpx;
+  color: #000000;
+}
+
+.desc_txt{
+  font-size: 28rpx;
+  color: #384249;
+}
+
+.user_info_setion{
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user_info{
+  flex-direction: row;
+  margin-left: 30rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100rpx;
+}
+
+.user_infos{
+  flex-direction: column;
+  display: flex;
+  align-content: flex-start;
+  justify-content: space-between;
+  margin-left: 30rpx;
+}
+
+.user_list_class{
+  min-height: 100rpx;
+  background-color: #ffffff;
+}
+
+.user_relation{
+  flex-direction: row;
+  display: flex;
+  align-content: space-between;
+  justify-content: flex-start;
+}
+
+.user_name{
+  font-size: 30rpx;
+  color: #384249;
+}
+
+.user_fansNum{
+  font-size: 24rpx;
+  color: #D0D0D0;
+}
+
+.attention{
+  background-color: #efeff4;
+  padding-top: 10rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  font-size: 30rpx;
+  min-height: 45rpx;
+}

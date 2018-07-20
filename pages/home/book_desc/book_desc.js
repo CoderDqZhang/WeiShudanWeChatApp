@@ -12,6 +12,10 @@ Page({
     windowHeight: 0,
     isAddBook: false,
     isMyBook: false,
+    doubanApi:null,
+    doubanInfo:null,
+    comment_list:[],
+    shareData:null
   },
 
   /**
@@ -21,22 +25,35 @@ Page({
     var that = this
     if (options.mybook != null) {
       var data = JSON.parse(options.mybook)
+      that.data.shareData = options.mybook
       that.setData({
         my_book_info: data,
         isMyBook: data.borrowState == 1 || data.borrowState == 3 ? true : false,
         book_info: data.tails.bookInfo
       })
+      that.showBookInfo(data.isbn)
+      console.log(that)
+    } else if (options.topbook != null) {
+      var data = JSON.parse(options.topbook)
+      that.setData({
+        my_book_info: data,
+        isMyBook: false,
+        book_info: data
+      })
+      that.showBookInfo(data.isbn)
       console.log(that)
     } else {
       that.setData({
         isAddBook: true
       })
       that.requestBookInfo(options.isbn)
+      that.showBookInfo(options.isbn)
     }
     that.setData({
       windowWidth: app.globalData.windowWidth,
       windowHeight: app.globalData.windowHeight
     })
+    that.requestComment()
   },
 
   requestBookInfo: function (isbn) {
@@ -49,6 +66,63 @@ Page({
       that.setData({
         book_info: res[0]
       })
+    })
+  },
+
+  requestComment: function (res) {
+      var that = this
+      var data = { 'commType': '2','objectId':that.data.book_info.id}
+      var tempList = []
+      app.func.requestGet('comment/list', data, function (res) { 
+        var strs = res[0].commContent.split('_')
+        for (var i = 0; i < strs.length; i ++) {
+          if (i % 2 == 0 && strs[i] == 'weichat') {
+            console.log(strs[i + 1])
+            tempList.push(strs[i + 1])
+          }
+        }
+        that.setData({
+          comment_list:tempList
+        })
+        console.log(that)
+        console.log(res)
+      })
+  },
+
+  showBookInfo: function (isbn) {
+    var that = this
+    wx.request({
+      url: 'https://api.douban.com/v2/book/isbn/:' + isbn,
+      method: 'get',
+      header: {
+        'content-type': 'application/text',
+      },
+      success(res){
+        that.setData({
+          doubanInfo:res.data ,
+        })
+        
+      },
+      fail(res){
+        console.log(res)
+      },
+    })
+  },
+
+  add_my_book: function (res){
+    var that = this
+    // let imageArray = that.data.book_info.bookImage.
+    that.data.book_info.detailHref = ""
+    var data = JSON.stringify(that.data.book_info)
+    wx.navigateTo({
+      url: '../comment/comment?book_info=' + data,
+    })
+  },
+
+  books_desc: function (res){
+    var that = this
+    wx.navigateTo({
+      url: '../boooks_douban/books?url=' + that.data.doubanInfo.alt,
     })
   },
 
@@ -152,6 +226,17 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    var that = this
+    return {
+      title: '微借书小程序',
+      path: 'pages/home/book_desc/book_desc?mybook=' + that.data.shareData,
+      success: function (res) {
 
+      },
+      fail: function (res) {
+        // 分享失败
+        console.log(res)
+      }
+    }
   }
 })

@@ -42,6 +42,7 @@ Page({
           ress[i].borrowEnd = app.define.toDate(Number(ress[i].borrowEnd))
           ress[i].tails.bookInfo.imageType = imageType
           ress[i].tails.bookInfo.detailHref = ''
+          ress[i].state = 2
           var borrowDesc = ress[i].state == 2 ? '待还' : '完成'
           ress[i].bookStatus = borrowDesc
         }
@@ -52,6 +53,34 @@ Page({
     })
   },
 
+  borrow_list_tap: function (res) {
+    var that = this
+    var data = JSON.stringify(that.data.borrow_list_user[res.currentTarget.dataset.index].tails.bookInfo)
+  
+    
+    wx.navigateTo({
+      url: '../book_desc/book_desc?topbook=' + data,
+    })
+  },
+
+  borrow_list_tap_other:function (res) {
+    var that = this
+    var data = JSON.stringify(that.data.borrow_list_other[res.currentTarget.dataset.index].tails.bookInfo)
+    wx.navigateTo({
+      url: '../book_desc/book_desc?topbook=' + data,
+    })
+  },
+
+  qrcode_click: function (res){
+    var that = this 
+    var data = {
+      "bookId": that.data.borrow_list_other[res.currentTarget.dataset.index].bookId,
+      "userId": app.globalData.userId,
+    }
+    wx.navigateTo({
+      url: '../qrcode/qrcode?data=' + JSON.stringify(data),
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

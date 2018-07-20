@@ -1,0 +1,24 @@
+/* pages/home/comment/comment.wxss */
+.comment_array{
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  font-size: 30rpx;
+  align-items: center;
+  padding-left: 30rpx;
+  padding-top: 20rpx;
+  padding-right: 30rpx;
+  padding-bottom: 20rpx;
+  min-height: 50rpx;
+}
+
+.images_class{
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.edite{
+  display: flex;
+  margin-top: 30rpx;
+}

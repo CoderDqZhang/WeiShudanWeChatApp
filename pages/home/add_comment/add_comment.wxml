@@ -1,0 +1,5 @@
+<!--pages/home/add_comment/add_comment.wxml-->
+<scroll-view scroll-y='true' style="backgroudcolor:#384249; height:{{windowHeight * 2 - 80}}rpx;">
+  <input  class = 'inputClass' bindinput="bindKeyInput" placeholder="输入标签"/>
+</scroll-view>
+<button bindtap="add_my_comment">添加标签</button>

@@ -1,24 +1,98 @@
-/* pages/home/mine/mine.wxss */
-.cell_class{
-  height: 88rpx;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-left: 30rpx;
-  padding-right: 30rpx;
-  align-items: center;
-  align-content: center;
+/* pages/mine/mine/mine.wxss */
+page {
+  background-color: #ffffff;
+}
+
+.userInfo{
+  background-color: #594CA8;
+  height: 450rpx;
+  flex-direction: column;
   display: flex;
-  /* background-color
-  d: white; */
+  align-items:center;
+  justify-content: center;
+}
+.userName{
+  margin-top: 15pt;
+  font: 32rpx;
+  color: white;
+}
+
+.table{
+  background-color: white;
+  width: 100%;
+}
+
+.mineClass{
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  margin-left: 30rpx;
+  min-height: 88rpx;
+}
+
+.tableTitle{
+  font-size: 26rpx;
+  color: #556169;
+}
+
+.detailImage {
+  width: 16rpx;
+  height: 26rpx;
+  margin-right: 30rpx;
+}
+
+.noneTicketSession {
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cover {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 100rpx;
+  border-color: white;
+}
+
+.none_text {
+  margin-top: 75rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #BBC1CB;
+}
+
+
+.serviceConnect{
+  margin-top:20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: white;
 }
 
-.title{
-  font-size: 30rpx;
-  /* width: 100rpx; */
+.service{
+  font-size: 26rpx;
+  color: #DDE0E5;
 }
 
-.image_class{
-  width: 40rpx;
-  height: 40rpx;  
+.phone{
+  font-size: 26rpx;
+  color: #4bd4c5;
+}
+
+.book_number{
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table_title{
+  font-size: 26rpx;
+  color: #556169;
+  margin-right: 30rpx;
 }

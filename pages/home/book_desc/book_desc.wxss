@@ -1,0 +1,84 @@
+.book_desc{
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  padding-bottom: 20rpx;
+  background-color: #ffffff;
+}
+
+.book_tag{
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  padding-bottom: 20rpx;
+  background-color: #ffffff;
+}
+
+.desc_title{
+  font-size: 30rpx;
+  color: #000000;
+}
+
+.desc_txt{
+  font-size: 28rpx;
+  color: #384249;
+  min-height:  80rpx;
+}
+
+.user_info{
+  flex-direction: row;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100rpx;
+}
+
+.user_infos{
+  flex-direction: column;
+  display: flex;
+  align-content: flex-start;
+  justify-content: space-between;
+  margin-left: 30rpx;
+}
+
+.user_list_class{
+  min-height: 100rpx;
+  background-color: #ffffff;
+}
+
+.user_relation{
+  flex-direction: row;
+  display: flex;
+  align-content: space-between;
+  justify-content: flex-start;
+}
+
+.user_name{
+  font-size: 30rpx;
+  color: #384249;
+}
+
+.user_fansNum{
+  font-size: 24rpx;
+  color: #D0D0D0;
+}
+
+.books_douban{
+  background-color: #ffffff;
+  margin-top: 20rpx;
+  min-height: 98rpx;
+  font-size: 24rpx;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.tag{
+  font-size: 30rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  padding-top: 4rpx;
+  padding-bottom: 4rpx;
+}

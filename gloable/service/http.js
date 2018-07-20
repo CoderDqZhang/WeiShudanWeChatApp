@@ -117,32 +117,20 @@ function requestPost(url, data, cb) {
 }
 
 function requestGet(url, data, cb) {
-  if (getApp().globalData.userInfo != null) {
-    wx.request({
-      url: rootDocment + url,
-      data: data,
-      method: 'get',
-      header: {
-        'content-type': 'application/json',
-      },
-      success: function (res) {
-        return typeof cb == "function" && cb(res.data)
-      },
-      fail: function () {
-        return typeof cb == "function" && cb(false)
-      },
-    })
-  } else {
-    wx.showModal({
-      title: "请允许获取用户信息",
-      confirmColor: "#594CA8",
-      confirmText: "知道了",
-      success: function (res) {
-        console.log('用户点击确定')
-      }
-    })
-    return typeof cb == "function" && cb(false)
-  }
+  wx.request({
+    url: rootDocment + url,
+    data: data,
+    method: 'get',
+    header: {
+      'content-type': 'application/json',
+    },
+    success: function (res) {
+      return typeof cb == "function" && cb(res.data)
+    },
+    fail: function () {
+      return typeof cb == "function" && cb(false)
+    },
+  })
 }
 
 function requestUpload(url, data, filePath, name, cb){
@@ -206,8 +194,26 @@ function requestSessionIDGet(url, data,lp_session_id, cb){
 }
 
 
+function requestLogin(url, data, cb) {
+  wx.request({
+    url: rootDocment + url,
+    data: data,
+    method: 'post',
+    header: {
+      'content-type': 'application/json',
+    },
+    success: function (res) {
+      return typeof cb == "function" && cb(res.data)
+    },
+    fail: function () {
+      return typeof cb == "function" && cb(false)
+    },
+  })
+}
+
 
 module.exports.requestPost = requestPost
+module.exports.requestLogin = requestLogin
 module.exports.requestGet = requestGet
 module.exports.requestDelete = requestDelete
 module.exports.requestPut = requestPut

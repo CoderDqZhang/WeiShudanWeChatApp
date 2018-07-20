@@ -1,0 +1,21 @@
+<!--pages/home/user_info/change_userinfo.wxml-->
+<form bindsubmit="formSubmit">
+  <view class="title_input">
+    <view class="title_phone">联系电话</view>
+    <input name="phone" class="input_text" placeholder="手机或固话" placeholder-style="font-size: 15px;color: #BBC1CB;letter-spacing: 0;" style="width:{{windowWidth}}px; " type="number" value="{{userInfo.mobile}}" />
+  </view>
+  <view class="title_input">
+    <view class="title_phone">QQ号码</view>
+    <input name="qq" class="input_text" placeholder="QQ号码" placeholder-style="font-size: 15px;color: #BBC1CB;letter-spacing: 0;" style="width:{{windowWidth}}px; " type="number" value="{{userInfo.tails.userInfo.qq}}" />
+  </view>
+  <view class="title_input">
+    <view class="title_phone">微信号码</view>
+    <input name="weChat" class="input_text" placeholder="微信号" placeholder-style="font-size: 15px;color: #BBC1CB;letter-spacing: 0;" style="width:{{windowWidth}}px; " value="{{userInfo.tails.userInfo.weixin}}" />
+  </view>
+  <view class="title_input">
+    <view class="title_phone">微信二维码</view>
+    <view class='btn' wx:if="{{userInfo.tails.userInfo.qrCode == ''}}">点击上传</view>
+    <view class='btn' wx:else>点击修改</view>
+  </view>
+  <button formType="submit" class="confim" >保存</button>
+</form>
